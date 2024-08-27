@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=428, initial-scale=1.0">
+    <title>Mobile Pass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        #media-container {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+        #time {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        #local {
+            background-color: black;
+            color: white;
+            padding: 2px 55px;
+            font-size: 50px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        #ticket-info {
+            text-align: left;
+            margin-right: 40px;
+        }
+
+        #heading {
+            text-align: left;
+            margin-right: 170px;
+            margin-bottom: 30px;
+        }
+        
+        #top1 {
+            text-align: left;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 0
+        }
+
+        #top2 {
+            text-align: left;
+            font-size: 12px;
+            line-height: 0
+        }
+
+        #bottom1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        #bottom2 {
+            font-size: 12px;
+        }
+
+        #bottom3 {
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <p id="top1">AC Transit</p>
+        <p id="top2">Show operator your ticket</p>
+    </div>
+
+    <div id="media-container">
+        <img src="looping-video.gif" alt="Looping Video">
+    </div>
+
+    <div id="time"></div>
+    <div id="local">Local</div>
+
+    <div id="ticket-info">
+        <p id="bottom1">Adult Transbay Single Ride</p>
+        <p id="bottom2">Oakland, CA</p>
+        <p id="bottom3">Expires Aug 28, 2024 at 3:00 AM</p>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour12: true });
+            document.getElementById('time').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);  // Update every second
+        updateTime();  // Initial call to display the time immediately
+    </script>
+
+</body>
+</html>
